@@ -13,4 +13,5 @@ def generate_data(n_points: int, mesh_dim: int) -> np.ndarray:
 def save_mesh_to_file(point_vectors: np.ndarray, filename: str = 'mesh.h5') -> None:
     f = h5py.File(filename)
     f.create_dataset("x", data=point_vectors)
+    f.close()
     return None
